@@ -1,0 +1,8 @@
+/ {
+  chosen { zmk,kscan = &kscan0; };
+};
+
+&batt { status = "okay"; };
+&i2c0 { status = "okay"; };
+&ssd1306 { status = "okay"; };
+&rgbleds { status = "okay"; };
