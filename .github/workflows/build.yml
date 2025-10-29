@@ -1,15 +1,12 @@
-
 name: ZMK Build
 
 on:
   push:
-    branches: [ main ]   # <-- change to 'master' if your default branch is master
+    branches: [ main ]   # change to master if that's your default
   pull_request:
-  workflow_dispatch:      # lets you run it manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      # Build both halves (Nice!Nano v2 + Sofle)
-      shield_matrix: "nice_nano_v2:sofle_left nice_nano_v2:sofle_right"
+    secrets: inherit
